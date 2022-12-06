@@ -1,0 +1,41 @@
+.menuContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  transition: 0.5s;
+}
+.favouriteCounter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 30px;
+  left: 25px;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  background-color: #de076b;
+  font-size: 20px;
+  border-radius: 20px;
+  z-index: 99;
+  margin: 0;
+}
+.cartCounter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 30px;
+  left: 25px;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  background-color: #de076b;
+  font-size: 20px;
+  border-radius: 20px;
+  z-index: 99;
+  margin: 0;
+}
+.menuContainer a {
+  height: 48px;
+}

@@ -1,0 +1,23 @@
+.footerLogoContainer {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+}
+.footerLogoImg {
+  width: 150px;
+}
+.footerLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footerLogoText {
+  font-size: 60px;
+  font-weight: bold;
+}
+.copyright {
+  font-style: italic;
+  font-size: 15px;
+  color: gray;
+  margin-top: 50px;
+}

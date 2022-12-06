@@ -1,0 +1,7 @@
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  justify-content: space-around;
+  background-color: rgb(245, 222, 179);
+}

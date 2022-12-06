@@ -1,0 +1,30 @@
+.searchContainer {
+  max-width: 400px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 10px;
+}
+.searchInput {
+  background-color: transparent;
+  height: 100%;
+  width: 100px;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  transition: 0.5s;
+  font-size: 20px;
+}
+.searchInput:focus {
+  width: 400px;
+  outline: none;
+}
+.clearButton {
+  fill: gray;
+  transition: 0.5s;
+}
+.clearButton:hover {
+  fill: #de076b;
+}
