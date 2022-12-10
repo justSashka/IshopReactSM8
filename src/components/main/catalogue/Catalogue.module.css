@@ -1,0 +1,34 @@
+.catalogueContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.filtersContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: wheat;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.filterButton {
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid #de076b;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.filterButton:hover {
+  color: white;
+}
+.productCardsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1300px;
+  margin-top: 10px;
+}

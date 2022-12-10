@@ -1,0 +1,19 @@
+.footerContactsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.footerContactsContainer a {
+  color: #de076b;
+}
+
+.contactLink {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.contactIconsContainer {
+  margin-top: 15px;
+}

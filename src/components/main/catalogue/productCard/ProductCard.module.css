@@ -1,0 +1,16 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 5px;
+  background-color: red;
+  margin-bottom: 10px;
+}
+.productStatusBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.productImage {
+  align-self: center;
+}

@@ -1,0 +1,40 @@
+.loginPageContainer {
+  width: 700px;
+  margin: 149px auto 149px auto;
+  padding: 10px;
+  background-color: rgb(245, 222, 179);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+.loginForm input {
+  outline: none;
+  border: none;
+  height: 30px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+.submitButton {
+  background-color: #de076b;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+.loginPageLink {
+  margin-top: 10px;
+  color: white;
+  background-color: #de076b;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+}
