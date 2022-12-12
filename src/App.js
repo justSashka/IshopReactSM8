@@ -6,9 +6,9 @@ import { Main } from './components/main/Main'
 function App() {
   return (
     <>
-      <Header />
+      {localStorage.getItem('token') !== null ? <Header /> : ''}
       <Main />
-      <Footer />
+      {localStorage.getItem('token') !== null ? <Footer /> : ''}
     </>
   )
 }

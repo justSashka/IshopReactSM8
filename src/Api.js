@@ -46,13 +46,20 @@ class API {
     }
   }
 
-  async getProducts() {
-    try {
-      const response = await fetch(`${this.baseUrl}/products`, { headers: this.headers })
-      console.log((response.json()))
-    } catch (error) {
-      throw new Error(error)
-    }
+  getProducts() {
+    const data = fetch(`${this.baseUrl}/products`, {
+      headers: this.headers,
+    }).then((res) => res.json())
+      .then((result) => result.products)
+    return data
+  }
+
+  getUser() {
+    const data = fetch(`${this.baseUrl}/v2/sm8/users/me`, {
+      headers: this.headers,
+    }).then((res) => res.json())
+      .then((result) => result)
+    return data
   }
 }
 

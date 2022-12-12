@@ -1,0 +1,23 @@
+.mainContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.link{
+  align-self: center;
+  justify-self: center;
+  background-color: wheat;
+  text-align: center;
+  font-size: 25px;
+  padding: 10px;
+  color: black;
+  margin-top: 50px;
+}
+.unregContainer{
+  display: flex;
+  flex-direction: column;
+}
+.pozornoeOpravdanie{
+  font-size: 20px;
+  max-width: 300px;
+}

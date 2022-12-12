@@ -3,8 +3,9 @@
   flex-direction: column;
   width: 300px;
   padding: 5px;
-  background-color: red;
+  background-color: white;
   margin-bottom: 10px;
+  border: 5px solid wheat;
 }
 .productStatusBar {
   display: flex;
@@ -13,4 +14,32 @@
 }
 .productImage {
   align-self: center;
+  max-width: 200px;
+}
+.tagsContainer{
+  display: flex;
+  flex-direction: row;
+}
+.newTag{
+  margin-left: 10px;
+  background-color: #de076b;
+  font-size: 20px;
+  padding: 2px;
+  border-radius: 10px;
+  color: white;
+}
+.otherTag{
+  margin-left: 10px;
+  background-color: skyblue;
+  font-size: 20px;
+  padding: 2px;
+  border-radius: 10px;
+  color: white;
+}
+.oldPrice{
+  text-decoration: line-through;
+}
+.inCartButton{
+  align-self: center;
+  margin-top: auto;
 }

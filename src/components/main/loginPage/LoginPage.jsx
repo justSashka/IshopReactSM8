@@ -4,14 +4,12 @@ import Api from '../../../Api'
 import s from './LoginPage.module.css'
 
 export function LoginPage() {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const navigate = useNavigate()
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(email.target.value, password.target.value)
-    Api.signIn(email.target.value, password.target.value)
-    navigate('/catalogue')
+    Api.signIn(email.target.value, password.target.value).finally(() => navigate('/catalogue'))
   }
   return (
     <div className={s.loginPageContainer}>
