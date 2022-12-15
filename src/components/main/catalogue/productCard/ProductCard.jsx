@@ -6,7 +6,7 @@ export function ProductCard(props) {
     <div className={s.cardContainer}>
       <div className={s.productStatusBar}>
         <div className={s.tagsContainer}>
-          {props.tags.map((tag) => <div className={tag === 'new' ? s.newTag : s.otherTag}>{tag}</div>)}
+          {props.tags.map((tag) => <div key={tag} className={tag === 'new' ? s.newTag : s.otherTag}>{tag}</div>)}
         </div>
         <button className={s.likeButton} type="submit">
           Like

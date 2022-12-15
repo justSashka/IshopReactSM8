@@ -38,20 +38,18 @@ class API {
       if (response.status !== 200) {
         throw new Error()
       }
-      if (localStorage.getItem('token') === null) {
-        response.json().then((json) => localStorage.setItem('token', json.token))
-      }
+      response.json().then((json) => localStorage.setItem('token', json.token))
     } catch (error) {
       throw new Error(error)
     }
   }
 
   getProducts() {
-    const data = fetch(`${this.baseUrl}/products`, {
+    const response = fetch(`${this.baseUrl}/products`, {
       headers: this.headers,
     }).then((res) => res.json())
       .then((result) => result.products)
-    return data
+    return response
   }
 
   getUser() {

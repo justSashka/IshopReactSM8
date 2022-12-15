@@ -5,8 +5,13 @@ import { ProductCard } from './productCard/ProductCard'
 
 export function Catalogue() {
   const [products, setProducts] = useState([])
+  const [isLoading, setIsloading] = useState(true)
   useEffect(() => {
-    Api.getProducts().then((obj) => setProducts(obj))
+    Api.getProducts().then((product) => {
+      console.log(product)
+      setProducts(product)
+      setIsloading(false)
+    })
   }, [])
 
   return (
@@ -21,15 +26,17 @@ export function Catalogue() {
         <div className={s.filterButton}>Discount</div>
       </div>
       <div className={s.productCardsContainer}>
-        {products.map((product) => (
+        {isLoading ? <div>Loading</div> : products.map((product) => (
           <ProductCard
+            // eslint-disable-next-line dot-notation, no-underscore-dangle
+            key={product._id}
             discount={product.discount}
             tags={product.tags}
             price={product.price}
             stock={product.stock}
             name={product.name}
             pictures={product.pictures}
-            key={product.created_at}
+
           />
         ))}
       </div>
