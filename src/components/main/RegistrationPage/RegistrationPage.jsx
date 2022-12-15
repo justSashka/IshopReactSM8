@@ -9,7 +9,6 @@ export function RegistrationPage() {
   const navigate = useNavigate()
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(email.target.value, password.target.value)
     Api.signUp(email.target.value, password.target.value).then(navigate('/login'))
   }
   return (

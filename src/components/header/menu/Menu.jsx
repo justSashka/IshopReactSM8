@@ -16,6 +16,7 @@ export function Menu() {
       </a>
       <a href="/profile" className={s.profileButton}>
         <img src={profileIcon} alt="" srcSet="" />
+        <p className={s.iconTitle}>My profile</p>
       </a>
     </div>
   )

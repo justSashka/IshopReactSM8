@@ -39,3 +39,14 @@
 .menuContainer a {
   height: 48px;
 }
+.profileButton{
+  display: flex;
+  flex-direction: column;
+}
+.iconTitle{
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  font-size: 15px;
+  font-weight: bold;
+}

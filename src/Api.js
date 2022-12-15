@@ -15,19 +15,21 @@ class API {
           password,
         }),
       })
+
       if (response.status === 409) {
         throw new Error('This user already registred')
       } else if (response.status === 400) {
         throw new Error('Wrong email or password')
       }
+      return response
     } catch (error) {
-      alert(error)
+      return error.message
     }
   }
 
   async signIn(email, password) {
     try {
-      const response = await fetch(`${this.baseUrl}/signin`, {
+      return await fetch(`${this.baseUrl}/signin`, {
         method: 'POST',
         headers: this.headers,
         body: JSON.stringify({
@@ -35,36 +37,36 @@ class API {
           password,
         }),
       })
-      if (response.status !== 200) {
-        throw new Error()
-      }
-      response.json().then((json) => localStorage.setItem('token', json.token))
     } catch (error) {
-      throw new Error(error)
+      return error.message
     }
   }
 
-  getProducts() {
-    const response = fetch(`${this.baseUrl}/products`, {
-      headers: this.headers,
-    }).then((res) => res.json())
-      .then((result) => result.products)
-    return response
+  async getProducts() {
+    const token = window.localStorage.getItem('token')
+    try {
+      return await fetch(`${this.baseUrl}/products`, {
+        method: 'GET',
+        headers: { headers: this.headers, authorization: `Bearer ${token}` },
+      })
+    } catch (error) {
+      return error.message
+    }
   }
 
-  getUser() {
-    const data = fetch(`${this.baseUrl}/v2/sm8/users/me`, {
-      headers: this.headers,
-    }).then((res) => res.json())
-      .then((result) => result)
-    return data
+  async getProfile() {
+    try {
+      const token = window.localStorage.getItem('token')
+      return await fetch(`${this.baseUrl}/v2/sm8/users/me`, { method: 'GET', headers: { headers: this.headers, authorization: `Bearer ${token}` } })
+    } catch (error) {
+      return error.message
+    }
   }
 }
 
 const Api = new API({
   baseUrl: 'https://api.react-learning.ru',
   headers: {
-    authorization: `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json',
   },
   groupId: 'sm8',

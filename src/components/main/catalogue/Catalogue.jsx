@@ -1,17 +1,22 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Api from '../../../Api'
 import s from './Catalogue.module.css'
 import { ProductCard } from './productCard/ProductCard'
 
 export function Catalogue() {
+  const navigate = useNavigate()
   const [products, setProducts] = useState([])
-  const [isLoading, setIsloading] = useState(true)
   useEffect(() => {
-    Api.getProducts().then((product) => {
-      console.log(product)
-      setProducts(product)
-      setIsloading(false)
-    })
+    if (!window.localStorage.getItem('token')) navigate('/login')
+
+    const getProductArr = async () => {
+      const response = await Api.getProducts()
+      const responseData = await response.json()
+      setProducts(responseData.products)
+    }
+
+    getProductArr()
   }, [])
 
   return (
@@ -26,7 +31,7 @@ export function Catalogue() {
         <div className={s.filterButton}>Discount</div>
       </div>
       <div className={s.productCardsContainer}>
-        {isLoading ? <div>Loading</div> : products.map((product) => (
+        {products.map((product) => (
           <ProductCard
             // eslint-disable-next-line dot-notation, no-underscore-dangle
             key={product._id}
