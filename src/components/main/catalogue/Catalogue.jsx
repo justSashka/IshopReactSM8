@@ -1,22 +1,29 @@
-import { useState, useEffect } from 'react'
+import { useQuery } from '@tanstack/react-query'
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Api from '../../../Api'
 import s from './Catalogue.module.css'
 import { ProductCard } from './productCard/ProductCard'
 
+const catalogueQueryKey = ['CATALOGUE_QUERY_KEY']
+
 export function Catalogue() {
   const navigate = useNavigate()
-  const [products, setProducts] = useState([])
+
+  const getProductArr = async () => {
+    const response = await Api.getProducts()
+    const responseData = await response.json()
+    return responseData.products
+  }
+  const { data: products, isLoading } = useQuery(
+    {
+      queryKey: catalogueQueryKey,
+      queryFn: getProductArr,
+    },
+  )
+
   useEffect(() => {
-    if (!window.localStorage.getItem('token')) navigate('/login')
-
-    const getProductArr = async () => {
-      const response = await Api.getProducts()
-      const responseData = await response.json()
-      setProducts(responseData.products)
-    }
-
-    getProductArr()
+    if (!window.localStorage.getItem('token')) { navigate('/login') }
   }, [])
 
   return (
@@ -31,7 +38,7 @@ export function Catalogue() {
         <div className={s.filterButton}>Discount</div>
       </div>
       <div className={s.productCardsContainer}>
-        {products.map((product) => (
+        {isLoading ? <div>Loading</div> : products.map((product) => (
           <ProductCard
             // eslint-disable-next-line dot-notation, no-underscore-dangle
             key={product._id}

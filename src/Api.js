@@ -5,26 +5,16 @@ class API {
   }
 
   async signUp(email, password) {
-    try {
-      const response = await fetch(`${this.baseUrl}/signup`, {
-        method: 'POST',
-        headers: this.headers,
-        body: JSON.stringify({
-          email,
-          group: 'sm8',
-          password,
-        }),
-      })
-
-      if (response.status === 409) {
-        throw new Error('This user already registred')
-      } else if (response.status === 400) {
-        throw new Error('Wrong email or password')
-      }
-      return response
-    } catch (error) {
-      return error.message
-    }
+    const response = await fetch(`${this.baseUrl}/signup`, {
+      method: 'POST',
+      headers: this.headers,
+      body: JSON.stringify({
+        email,
+        group: 'sm8',
+        password,
+      }),
+    })
+    return response
   }
 
   async signIn(email, password) {

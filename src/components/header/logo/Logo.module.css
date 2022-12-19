@@ -8,3 +8,7 @@
 .logoText {
   font-size: 40px;
 }
+.logoLink{
+  text-decoration: none;
+  color: black;
+}
