@@ -2,9 +2,9 @@ import { Routes, Route } from 'react-router-dom'
 import { RegistrationPage } from './RegistrationPage/RegistrationPage'
 import { LoginPage } from './loginPage/LoginPage'
 import { Catalogue } from './catalogue/Catalogue'
-import s from './Main.module.css'
 import { Profile } from './profile/Profile'
 import { LoginResult } from './loginPage/loginResult/LoginResult'
+import s from './Main.module.css'
 
 export function Main() {
   return (

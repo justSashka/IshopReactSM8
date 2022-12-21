@@ -6,25 +6,25 @@ export function FooterMenu() {
     <div className={s.footerMenuContainer}>
       <Link className={s.menuLink} to="catalogue">Catalogue</Link>
 
-      <Link href="/discount" className={s.menuLink}>
+      <Link to="/discount" className={s.menuLink}>
         Discount
       </Link>
-      <Link href="/news" className={s.menuLink}>
+      <Link to="/news" className={s.menuLink}>
         News
       </Link>
-      <Link href="/reviewes" className={s.menuLink}>
+      <Link to="/reviewes" className={s.menuLink}>
         Reviews
       </Link>
-      <Link href="/payment" className={s.menuLink}>
+      <Link to="/payment" className={s.menuLink}>
         Payment
       </Link>
-      <Link href="/faq" className={s.menuLink}>
+      <Link to="/faq" className={s.menuLink}>
         F.A.Q.
       </Link>
-      <Link href="/feedback" className={s.menuLink}>
+      <Link to="/feedback" className={s.menuLink}>
         Feedback
       </Link>
-      <Link href="/contacts" className={s.menuLink}>
+      <Link to="/contacts" className={s.menuLink}>
         Contacts
       </Link>
     </div>
