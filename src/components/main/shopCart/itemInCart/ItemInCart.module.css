@@ -1,0 +1,9 @@
+.itemInCartContainer{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 20px auto;
+}
+.cartProductPicture{
+  max-width: 250px;
+}

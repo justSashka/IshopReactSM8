@@ -42,6 +42,8 @@ export function Catalogue() {
           <ProductCard
             // eslint-disable-next-line dot-notation, no-underscore-dangle
             key={product._id}
+            // eslint-disable-next-line no-underscore-dangle
+            productId={product._id}
             discount={product.discount}
             tags={product.tags}
             price={product.price}

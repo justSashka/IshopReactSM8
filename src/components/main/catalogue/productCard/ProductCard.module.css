@@ -75,3 +75,13 @@
   border: none;
   cursor: pointer;
 }
+.inCartBanner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  background-color: wheat;
+  padding: 6px;
+  margin-top: auto;
+}
