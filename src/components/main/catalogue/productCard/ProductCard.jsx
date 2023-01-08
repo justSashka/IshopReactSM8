@@ -7,7 +7,7 @@ import s from './ProductCard.module.css'
 export function ProductCard(props) {
   const dispatch = useDispatch()
   const cart = useSelector((state) => state.cart.cart)
-  const addProductHandler = () => dispatch(addItem(props.productId))
+  const addProductHandler = () => dispatch(addItem(props.productObj))
   return (
     <div className={s.cardContainer}>
       <div className={s.productStatusBar}>
@@ -38,7 +38,7 @@ export function ProductCard(props) {
         Stock:
         {props.stock}
       </div>
-      {cart.includes(props.productId) ? <div className={s.inCartBanner}>Already in cart!</div> : <button onClick={addProductHandler} className={s.inCartButton} type="button">In cart!</button>}
+      {cart.includes(props.productObj) ? <div className={s.inCartBanner}>Already in cart!</div> : <button onClick={addProductHandler} className={s.inCartButton} type="button">In cart!</button>}
 
     </div>
   )

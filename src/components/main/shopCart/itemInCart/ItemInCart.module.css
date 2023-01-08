@@ -3,7 +3,83 @@
   flex-direction: row;
   align-content: center;
   margin: 20px auto;
+  border:1px solid wheat;
+  width: 750px;
+  padding: 10px;
 }
 .cartProductPicture{
-  max-width: 250px;
+  max-width: 200px;
+}
+.cartProductInfo{
+  display: flex;
+  flex-direction: column;
+}
+.itemApproveCheckboxContainer{
+  background-color: wheat;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.itemApproveCheckbox{
+  background-color: wheat;
+  color: #de076b;
+}
+.cartItemName {
+  font-size: 30px;
+  background-color: wheat;
+  padding: 5px;
+  color: #de076b;
+}
+.cartItemTags{
+  display: flex;
+  flex-direction: row;
+}
+.cartItemTag{
+  margin:20px 10px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: wheat;
+  color: #de076b;
+  padding: 5px;
+  border: 1px solid #de076b;
+}
+.cartItemPrice{
+  font-size: 45px;
+  margin-top: 30px;
+}
+.cartItemCounterContainer{
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+}
+.itemCounterText{
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 30px;
+}
+.cartItemCounterIncButton{
+  font-weight: bold;
+  font-size: 30px;
+  background: none;
+  border:none;
+}
+.cartItemCounterDecButton{
+  font-weight: bold;
+  font-size: 30px;
+  background: none;
+  border:none
+}
+.checkboxLabel{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.itemStatus{
+  text-align: center;
+  margin-top: 5px;
+  background-color: #de076b;
+  font-size: 20px;
+  font-weight: bold;
 }
