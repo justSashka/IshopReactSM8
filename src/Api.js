@@ -44,6 +44,30 @@ class API {
     }
   }
 
+  async getProductById(productId) {
+    const token = window.localStorage.getItem('token')
+    try {
+      return await fetch(`${this.baseUrl}/products/${productId}`, {
+        method: 'GET',
+        headers: { headers: this.headers, authorization: `Bearer ${token}` },
+      })
+    } catch (error) {
+      return error.message
+    }
+  }
+
+  async getFiltredProducts(value) {
+    const token = window.localStorage.getItem('token')
+    try {
+      return await fetch(`${this.baseUrl}/products/search?query=${value}`, {
+        method: 'GET',
+        headers: { headers: this.headers, authorization: `Bearer ${token}` },
+      })
+    } catch (error) {
+      return error.message
+    }
+  }
+
   async getProfile() {
     try {
       const token = window.localStorage.getItem('token')

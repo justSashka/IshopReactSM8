@@ -1,0 +1,30 @@
+.shopCartContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+.cartInfoContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: start;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid wheat;
+  margin: 20px 10px;
+  padding: 5px;
+}
+.cartBuyLink{
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid #de076b;
+  color: black;
+  background-color: wheat;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}

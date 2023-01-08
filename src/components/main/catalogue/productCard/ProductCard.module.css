@@ -8,6 +8,7 @@
   margin-bottom: 10px;
   border: 5px solid wheat;
   font-size: 20px;
+  margin-right: 5px;
 }
 .productStatusBar {
   display: flex;
@@ -62,7 +63,7 @@
 }
 .name{
   align-self: center;
-  font-size: 25px;
+  font-size: 22px;
   color: #de076b;
   margin-bottom: auto;
 }
@@ -74,4 +75,14 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+.inCartBanner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  background-color: wheat;
+  padding: 6px;
+  margin-top: auto;
 }

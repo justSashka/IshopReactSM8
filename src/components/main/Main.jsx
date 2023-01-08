@@ -4,6 +4,7 @@ import { LoginPage } from './loginPage/LoginPage'
 import { Catalogue } from './catalogue/Catalogue'
 import { Profile } from './profile/Profile'
 import { LoginResult } from './loginPage/loginResult/LoginResult'
+import { ShopCart } from './shopCart/ShopCart'
 import s from './Main.module.css'
 
 export function Main() {
@@ -16,6 +17,7 @@ export function Main() {
         <Route path="/register" element={<RegistrationPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/loginres" element={<LoginResult />} />
+        <Route path="/shopcart" element={<ShopCart />} />
       </Routes>
     </div>
   )
