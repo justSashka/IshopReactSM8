@@ -1,7 +1,9 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Api from '../../../Api'
+import { setToken } from '../../../redux/slices/userSlice/userSlice'
 import s from './LoginPage.module.css'
 
 const logInQuerryKey = ['LOG_IN_QUERRY_KEY']
@@ -10,6 +12,7 @@ export function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const querryClient = useQueryClient()
 
@@ -19,6 +22,7 @@ export function LoginPage() {
     const responseData = await response.json()
     if (response.status === 200) {
       window.localStorage.setItem('token', responseData.token)
+      dispatch(setToken(responseData.token))
     } else {
       throw new Error('Wrong login or password! Bark!')
     }

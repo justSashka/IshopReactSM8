@@ -13,11 +13,11 @@ export const cartSlice = createSlice({
       if (!state.cart.includes(action.payload)) {
         state.cart.push(action.payload)
       }
-      localStorage.setItem('cart', state.cart)
+      localStorage.setItem('cart', JSON.stringify(state.cart))
     },
     removeItem(state, action) {
       state.cart = state.cart.filter((id) => id._id !== action.payload)
-      localStorage.setItem('cart', state.cart)
+      localStorage.setItem('cart', JSON.stringify(state.cart))
     },
     incCartPrice(state, action) {
       state.cartPrice += action.payload
@@ -27,9 +27,12 @@ export const cartSlice = createSlice({
       state.cartPrice -= action.payload
       localStorage.setItem('cartPrice', state.cartPrice)
     },
+    syncCartWithLS(state, action) {
+      state.cart = action.payload
+    },
   },
 })
 export const {
-  addItem, removeItem, incCartPrice, decCartPrice,
+  addItem, removeItem, incCartPrice, decCartPrice, syncCartWithLS,
 } = cartSlice.actions
 export default cartSlice.reducer
