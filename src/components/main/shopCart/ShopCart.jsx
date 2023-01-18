@@ -25,6 +25,7 @@ export function ShopCart() {
     const result = await Promise.all(arr)
     return result
   }
+
   async function cartItemsArray() {
     const getProductPromiseArray = []
     cart.forEach((product) => {
@@ -40,6 +41,7 @@ export function ShopCart() {
       queryFn: cartItemsArray,
     },
   )
+
   if (cart.length === 0 && cartFromLS.length !== 0) {
     dispatch(syncCartWithLS(cartFromLS))
   }
@@ -59,13 +61,14 @@ export function ShopCart() {
               name={item.name}
               pictures={item.pictures}
               counter="1"
+              isChecked={false}
             />
           ))}
         </div>
 
         {cart.length === 0 ? '' : (
           <div className={s.cartInfoContainer}>
-            <div className={s.cartPrice}>{`Total price: ${cartPrice}`}</div>
+            <div className={s.cartPrice}>{`Total price: ${cartPrice === 0 ? localStorage.getItem('cartPrice') : cartPrice}`}</div>
             <p className={s.cartPriceInfoText}>
               Select the products you want to buy
               and click on the button below
