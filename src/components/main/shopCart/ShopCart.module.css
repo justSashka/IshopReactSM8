@@ -28,3 +28,15 @@
   cursor: pointer;
   transition: 0.5s;
 }
+.selectAllButton{
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid #de076b;
+  color: black;
+  background-color: wheat;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-bottom: 5px;
+}

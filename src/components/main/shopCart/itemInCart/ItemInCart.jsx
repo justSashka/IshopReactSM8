@@ -5,10 +5,10 @@ import s from './ItemInCart.module.css'
 
 export function ItemInCart(props) {
   const {
-    pictures, discount, tags, price, stock, name, id,
+    pictures, discount, tags, price, stock, name, id, isChecked,
   } = props
+  const [isItemChecked, setIsItemChecked] = useState(isChecked)
   const [itemCount, setItemCount] = useState(1)
-  const [isChecked, setIsChecked] = useState(false)
   const [visible, setVisible] = useState(true)
   const removeElement = () => {
     setVisible((prev) => !prev)
@@ -26,12 +26,12 @@ export function ItemInCart(props) {
     }
   }
   function handleCheckboxClick() {
-    if (isChecked === false) {
+    if (isItemChecked === false) {
       dispatch(incCartPrice(itemPrice))
-      setIsChecked(true)
+      setIsItemChecked(true)
     } else {
       dispatch(decCartPrice(itemPrice))
-      setIsChecked(false)
+      setIsItemChecked(false)
     }
   }
   const handleDeleteClick = () => {
@@ -44,9 +44,9 @@ export function ItemInCart(props) {
       <div className={s.itemInCartContainer}>
         <div className={s.itemApproveCheckboxContainer}>
           <label className={s.checkboxLabel} htmlFor={`approveCheckbox${id}`}>
-            <input className={s.itemApproveCheckbox} onChange={handleCheckboxClick} type="checkbox" name="approveitem" id={`approveCheckbox${id}`} />
+            <input className={s.itemApproveCheckbox} onChange={handleCheckboxClick} type="checkbox" name="approveitem" id={`approveCheckbox${id}`} checked={isItemChecked} />
             <img className={s.cartProductPicture} src={pictures} alt={name} />
-            <div className={s.itemStatus}>{isChecked ? 'Selected' : ''}</div>
+            <div className={s.itemStatus}>{isItemChecked ? 'Selected' : ''}</div>
           </label>
         </div>
 
@@ -70,11 +70,11 @@ export function ItemInCart(props) {
             {stock}
           </div>
           <div className={s.cartItemCounterContainer}>
-            <button className={s.cartItemCounterIncButton} onClick={decCounter} type="button" disabled={!!isChecked}>-</button>
+            <button className={s.cartItemCounterIncButton} onClick={decCounter} type="button" disabled={isItemChecked}>-</button>
             <p className={s.itemCounterText}>{itemCount}</p>
-            <button className={s.cartItemCounterDecButton} onClick={incCounter} type="button" disabled={!!isChecked}>+</button>
+            <button className={s.cartItemCounterDecButton} onClick={incCounter} type="button" disabled={isItemChecked}>+</button>
           </div>
-          <button className={s.delItemButton} type="button" onClick={handleDeleteClick} disabled={!!isChecked}> Delete Item</button>
+          <button className={s.delItemButton} type="button" onClick={handleDeleteClick} disabled={isItemChecked}> Delete Item</button>
 
         </div>
       </div>
