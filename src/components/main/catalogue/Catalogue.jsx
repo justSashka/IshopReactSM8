@@ -12,6 +12,7 @@ const catalogueQueryKey = ['CATALOGUE_QUERY_KEY']
 
 export function Catalogue() {
   const navigate = useNavigate()
+  const token = useSelector((state) => state.user.token)
   const searchValue = useSelector((state) => state.search.searchValue)
   const searchArray = useSelector((state) => state.search.searchArray)
 
@@ -28,7 +29,7 @@ export function Catalogue() {
     },
   )
   useEffect(() => {
-    if (!window.localStorage.getItem('token')) {
+    if (token === null) {
       navigate('/login')
     }
   }, [])

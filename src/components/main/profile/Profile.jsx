@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Api from '../../../Api'
 import s from './Profile.module.css'
@@ -7,6 +8,7 @@ import s from './Profile.module.css'
 const profileQuerryKey = ['PROFILE_QUERRY_KEY']
 
 export function Profile() {
+  const token = useSelector((state) => state.user.token)
   const navigate = useNavigate()
 
   const getProfileInfo = async () => {
@@ -23,7 +25,7 @@ export function Profile() {
   )
 
   useEffect(() => {
-    if (!window.localStorage.getItem('token')) { navigate('/login') }
+    if (token === null) { navigate('/login') }
   }, [])
 
   return (

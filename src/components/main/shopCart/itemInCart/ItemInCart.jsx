@@ -56,6 +56,11 @@ export function ItemInCart(props) {
             {tags.map((tag) => <div className={s.cartItemTag}>{tag}</div>)}
           </div>
           <div className={s.cartItemPrice}>
+
+            {' '}
+            {discount === 0 ? '' : <del className={s.oldPrice}>{price * itemCount}</del> }
+
+            {' '}
             {itemPrice}
             {' '}
             ₽

@@ -1,7 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import { useQuery } from '@tanstack/react-query'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Api from '../../../Api'
+import { syncCartWithLS } from '../../../redux/slices/cartSlice/cartSlice'
 import { EmptyCart } from './emptyCart/EmptyCart'
 import { ItemInCart } from './itemInCart/ItemInCart'
 import s from './ShopCart.module.css'
@@ -9,8 +10,10 @@ import s from './ShopCart.module.css'
 export const ShopCartQueryKey = ['SHOP_CART_QUERY_KEY']
 
 export function ShopCart() {
+  const dispatch = useDispatch()
   const cart = useSelector((state) => state.cart.cart)
   const cartPrice = useSelector((state) => state.cart.cartPrice)
+  const cartFromLS = JSON.parse(localStorage.getItem('cart'))
 
   const getProductById = async (productId) => {
     const response = await Api.getProductById(productId)
@@ -37,6 +40,10 @@ export function ShopCart() {
       queryFn: cartItemsArray,
     },
   )
+  if (cart.length === 0 && cartFromLS.length !== 0) {
+    dispatch(syncCartWithLS(cartFromLS))
+  }
+
   return (isLoading ? 'loading'
     : (
       <div className={s.shopCartContainer}>
@@ -55,6 +62,7 @@ export function ShopCart() {
             />
           ))}
         </div>
+
         {cart.length === 0 ? '' : (
           <div className={s.cartInfoContainer}>
             <div className={s.cartPrice}>{`Total price: ${cartPrice}`}</div>
