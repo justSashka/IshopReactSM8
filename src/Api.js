@@ -76,11 +76,33 @@ class API {
       return error.message
     }
   }
+
+  async createProduct(productData) {
+    try {
+      return await fetch(`${this.baseUrl}/products`, {
+        method: 'POST',
+        headers: this.headers,
+        body: JSON.stringify(productData),
+      })
+    } catch (error) {
+      return error.message
+    }
+  }
+
+  async getProfileById(id) {
+    try {
+      const token = window.localStorage.getItem('token')
+      return await fetch(`${this.baseUrl}/v2/sm8/users/${id}`, { method: 'GET', headers: { headers: this.headers, authorization: `Bearer ${token}` } })
+    } catch (error) {
+      return error.message
+    }
+  }
 }
 
 const Api = new API({
   baseUrl: 'https://api.react-learning.ru',
   headers: {
+    Authorization: `Bearer ${window.localStorage.getItem('token')}`,
     'Content-Type': 'application/json',
   },
   groupId: 'sm8',

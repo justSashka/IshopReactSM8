@@ -45,3 +45,14 @@
   font-size: 45px;
   color: #de076b;
 }
+.createProductLinkContainer{
+  margin-top: 20px;
+}
+.createProductLink{
+  border: 1px solid #de076b;
+  color: black;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
