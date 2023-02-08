@@ -1,6 +1,6 @@
 .loginPageContainer {
   width: 700px;
-  margin: 149px auto 149px auto;
+  margin: auto;
   padding: 10px;
   background-color: rgb(245, 222, 179);
   display: flex;
@@ -37,4 +37,10 @@
   border: none;
   border-radius: 15px;
   font-size: 20px;
+}
+@media (max-width: 1024px) {
+  
+}
+@media (max-width: 740px) {
+
 }

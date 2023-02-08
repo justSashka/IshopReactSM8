@@ -12,3 +12,8 @@
   text-decoration: none;
   color: black;
 }
+@media (max-width: 390px) {
+  .logoContainer{
+    margin-top: 5px;
+  }
+}

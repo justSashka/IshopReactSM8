@@ -1,8 +1,24 @@
 .headerContainer {
   display: flex;
   justify-content: space-around;
+  margin-bottom: auto;
   background-color: wheat;
   align-items: center;
   padding: 5px;
   height: 105px;
+}
+@media (max-width: 1024px) {
+  .headerContainer{
+    margin-bottom: 10pxpx;
+  }
+}
+@media (max-width: 740px) {
+
+}
+@media (max-width: 390px) {
+.headerContainer{
+  flex-direction: column;
+  height: 200px;
+  padding: 20px;
+}
 }

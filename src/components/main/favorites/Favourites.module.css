@@ -1,0 +1,17 @@
+.favouritesContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .favouritesContainer{
+    margin-bottom: 200px;
+  }
+
+}
+

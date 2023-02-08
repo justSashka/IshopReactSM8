@@ -28,3 +28,16 @@
 .clearButton:hover {
   fill: #de076b;
 }
+@media (max-width: 1024px) {
+  .searchInput:focus {
+    width: 200px;
+  }
+}
+@media (max-width: 740px) {
+
+}
+@media (max-width: 390px) {
+.searchContainer{
+  margin: 20px;
+}
+}

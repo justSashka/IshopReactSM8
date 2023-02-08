@@ -50,3 +50,8 @@
   font-size: 15px;
   font-weight: bold;
 }
+@media (max-width: 390px) {
+  .menuContainer{
+    margin-bottom: 20px;
+  }
+}

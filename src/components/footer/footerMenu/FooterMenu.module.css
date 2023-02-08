@@ -16,3 +16,14 @@
 .menuLink:hover {
   color: #de076b;
 }
+@media (max-width: 1024px) {
+ .footerMenuContainer {
+  margin-top: 10px;
+ }
+}
+@media (max-width: 740px) {
+
+}
+@media (max-width: 340px) {
+
+}

@@ -86,3 +86,22 @@
 .oldPrice{
   font-size: 20px;
 }
+@media (width: 1024px) {
+  .itemInCartContainer{
+    width: 500px;
+  }
+}
+@media (width: 390px) {
+  .itemInCartContainer{
+    width: 390px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .cartProductPicture{
+    max-width: 100px;
+  }
+  .itemApproveCheckboxContainer{
+    height: 100%;
+  }
+
+}

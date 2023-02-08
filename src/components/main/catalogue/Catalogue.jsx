@@ -1,11 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Api from '../../../Api'
-import { sortPriceMaxToMin, sortPriceMinToMax } from '../../../redux/slices/sortSlice/sortKeys'
-import { setSortValue } from '../../../redux/slices/sortSlice/sortSlice'
 
 import s from './Catalogue.module.css'
 import { ProductCard } from './productCard/ProductCard'
@@ -13,7 +11,6 @@ import { ProductCard } from './productCard/ProductCard'
 const catalogueQueryKey = ['CATALOGUE_QUERY_KEY']
 
 export function Catalogue() {
-  const dispatch = useDispatch()
   const navigate = useNavigate()
   const token = useSelector((state) => state.user.token)
   const searchValue = useSelector((state) => state.search.searchValue)
@@ -36,9 +33,6 @@ export function Catalogue() {
       navigate('/login')
     }
   }, [])
-  const changeSortHandler = (value) => {
-    dispatch(setSortValue(value))
-  }
   return (
 
     <div className={s.catalogueContainer}>
@@ -74,11 +68,6 @@ export function Catalogue() {
           </div>
         </div>
       )}
-      <div className={s.filtersContainer}>
-        <button className={s.filterButton} type="button" onClick={() => changeSortHandler(sortPriceMinToMax)}>Cheap first</button>
-        <button className={s.filterButton} type="button" onClick={() => changeSortHandler(sortPriceMaxToMin)}>Expensive first</button>
-        <div className={s.filterButton}>Discount</div>
-      </div>
       <div className={s.createProductLinkContainer}>
         <Link className={s.createProductLink} to="/createProduct">Create product</Link>
       </div>

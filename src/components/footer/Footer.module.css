@@ -5,3 +5,23 @@
   justify-content: space-around;
   background-color: rgb(245, 222, 179);
 }
+@media (width: 1024px) {
+  .footerContainer{
+    position: fixed;
+    width: 1024px;
+    top: 577px;
+  }
+}
+@media (width: 768px) {
+  .footerContainer{
+    width: 768px;
+    top: 830px;
+  }
+}
+@media (width: 390px) {
+  .footerContainer{
+    position: fixed;
+    width: 390px;
+    top: 680px;
+  }
+}

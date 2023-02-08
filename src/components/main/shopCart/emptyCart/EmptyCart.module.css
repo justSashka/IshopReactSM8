@@ -32,3 +32,12 @@
 .emptyCardLink:hover{
   color:white
 }
+@media (width: 768px) {
+  .emptyCartImg{
+    width: 400px;
+  }
+  .emptyCartContainer{
+    margin-bottom: 250px;
+  }
+
+}
