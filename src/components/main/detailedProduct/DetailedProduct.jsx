@@ -14,6 +14,7 @@ const detailedProductQueryKey = ['DETAILED_PRODUCT_QUERY_KEY']
 export function DetailedProduct() {
   const params = useParams()
   const productId = params.id
+  const cart = useSelector((state) => state.cart.cart)
   const dispatch = useDispatch()
   const favouriteArray = useSelector((state) => state.favourites.favouritesIdArray)
 
@@ -51,7 +52,7 @@ export function DetailedProduct() {
               {product.discount === 0 ? 'No Discount' : `Discount:${product.discount}%`}
             </div>
             <div className={s.detailedProductButtonsContainer}>
-              <button onClick={addProductHandler} className={s.inCartButton} type="button">In cart!</button>
+              {JSON.stringify(cart).includes(JSON.stringify(product)) ? 'Already in cart' : <button onClick={addProductHandler} className={s.inCartButton} type="button">In cart!</button>}
               <button className={s.likeButton} type="button" onClick={favouritesHandler}>
                 {favouriteArray.includes(product._id) ? <img src={likeActive} alt="liked" srcSet="" /> : <img src={likePassive} alt="unliked" srcSet="" />}
               </button>

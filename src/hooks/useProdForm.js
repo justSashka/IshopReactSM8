@@ -19,7 +19,7 @@ const useNewProductForm = () => {
     {
       name: Yup.string()
         .min(4, 'Name should have more than 4 symbols')
-        .max(20, 'Name <= 20 symbols')
+        .max(30, 'Name <= 30 symbols')
         .required('Please set name'),
       pictures: Yup.string()
         .min(5, 'Link should have more than 5 symbols')
@@ -44,9 +44,8 @@ const useNewProductForm = () => {
 
   const navigate = useNavigate()
 
-  const successHandler = (response) => {
-    console.log(`Product was successfuly created with id: ${response.data._id}`)
-    navigate(`/products/${response.data._id}`)
+  const successHandler = () => {
+    navigate('/catalogue')
   }
   const errorHandler = (response) => {
     console.log(response.response.data.message)

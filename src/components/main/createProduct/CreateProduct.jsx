@@ -47,7 +47,7 @@ export function CreateProduct() {
             <ErrorMessage className={s.error} component="span" name="stock" />
           </div>
           <div className={s.createProductFieldContainer}>
-            <Field className={s.createProductFormField} name="weight" placeholder="Weight of product" type="text" />
+            <Field className={s.createProductFormField} name="wight" placeholder="Weight of product" type="text" />
             <ErrorMessage className={s.error} component="span" name="wight" />
           </div>
           <div className={s.createProductFieldContainer}>
